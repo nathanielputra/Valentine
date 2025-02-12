@@ -1,3 +1,19 @@
+window.addEventListener("scroll", function() {
+    const blackScreen = document.getElementById('blackScreen');
+    const content = document.getElementById('content');
+    
+    // Fade out the black screen when scrolled down
+    if (window.scrollY > 50) {
+        blackScreen.style.opacity = "0";  // Fade out
+        setTimeout(function() {
+            blackScreen.style.display = "none";  // Remove black screen after fade-out
+        }, 2000); // Wait for transition to finish
+
+        // Show the content
+        content.style.opacity = "1";
+        content.style.visibility = "visible";
+    }
+});
 (async function checkForUpdates() {
     const currentVersion = "1.0";
     const versionUrl = "https://raw.githubusercontent.com/ivysone/Will-you-be-my-Valentine-/main/version.json"; 
